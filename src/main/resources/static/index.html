@@ -3,25 +3,107 @@
 Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
 Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
 -->
-<html>
+<html lang="es"> <!-- etiqueta de lenguaje -->
     <head>
         <title>Tienda en línea</title> <!-- Es el titulo de la pestaña-->
         <meta charset="UTF-8">
-        
+        <meta name="description" content="Página de la lección 2"/>
+        <meta name="keywords" content="html5, css, web, fidelitas"/>
+        <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
+        <!-- etiqueda que indica al navegador que es un encabezado -->
+        <header>
+            
+            <h1>Tienda en linea</h1>
+            <br>
         
-        <div>
-            <h1 style="text-align: center;"> Home</h1> <!-- para titulos de nivel 1 -->
-            <p>Bienvenidos al curso de web y aplicaciones</p><!-- para parrafos -->
-        </div> 
-        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sagittis volutpat convallis, scelerisque etiam dui ullamcorper cras ornare himenaeos posuere mi, lacinia porttitor porta curae interdum curabitur habitasse maecenas velit. Donec sociosqu vestibulum laoreet natoque libero semper nisl tempor, felis vivamus dictumst facilisis conubia platea senectus morbi aliquet, leo proin cursus nulla quam dis ultricies. Platea tempus et donec sollicitudin ornare nascetur nostra cursus posuere curae, phasellus sociis hendrerit placerat commodo at sagittis odio.</p>
-        <p>Euismod tristique phasellus nisl venenatis mattis odio bibendum quis habitasse, tincidunt molestie fusce interdum justo pulvinar malesuada netus proin mi, donec quisque duis magnis commodo nullam iaculis ultrices. Vestibulum praesent eget montes mollis torquent sociis cursus facilisis, mattis leo luctus malesuada nisl porttitor nostra sagittis, habitasse nam integer lectus fringilla inceptos egestas. Habitant accumsan dapibus neque rhoncus facilisi ac habitasse quam euismod montes arcu enim, potenti eget orci vestibulum mus maecenas posuere bibendum sapien curae tortor gravida, urna ridiculus parturient metus aliquet dictum quisque mattis tempus magna massa.</p>
-        <p>Mattis rhoncus vitae lacus magna rutrum non, fames risus felis nibh id dictumst blandit, dapibus sodales viverra elementum auctor. Libero tortor mauris cursus et sollicitudin nunc egestas dui tempor, quisque pretium senectus augue tellus mattis non fusce, inceptos himenaeos platea convallis commodo feugiat nascetur odio. Suspendisse vestibulum pellentesque consequat tincidunt iaculis dignissim conubia sapien etiam donec congue, fermentum vel quisque tellus non hac class rutrum volutpat primis. Habitant nunc auctor hac pharetra ridiculus fames dictum nisl aptent nec tristique, cras etiam sodales sem blandit tempor penatibus magna erat bibendum mus est, aliquet nam turpis justo odio quis lobortis molestie feugiat fringilla.</p>
-        <br/> <!-- salto de linea -->
-        <br/>
-        <br/>
-        <br/>
-        <p> última línea... </p>
+        </header>
+        <nav id="menu"> 
+            <a href="ejemplo9.html">Atrás</a>
+            <a href="index.html">HOME</a>
+            <a href="ejemplo2.html">Adelante</a>
+        
+        </nav>
+        <aside id="barraLateral"> <!-- con clases de usa primero inicia en minuscula y luego mayuscula -->
+            <h2>Productos más vendidos</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sagittis volutpat convallis, scelerisque etiam dui ullamcorper cras ornare himenaeos posuere mi, lacinia porttitor porta curae interdum curabitur habitasse maecenas velit. Donec sociosqu vestibulum laoreet natoque libero semper nisl tempor, felis vivamus dictumst facilisis conubia platea senectus morbi aliquet, leo proin cursus nulla quam dis ultricies. Platea tempus et donec sollicitudin ornare nascetur nostra cursus posuere curae, phasellus sociis hendrerit placerat commodo at sagittis odio.</p>
+        </aside>
+        <section id="contenido">
+            <h2>Artículos más vendidos</h2>
+            <article>
+                <header> Asus Vivobook</header>
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sagittis volutpat convallis, scelerisque etiam dui ullamcorper cras ornare himenaeos posuere mi, lacinia porttitor porta curae interdum curabitur habitasse maecenas velit. Donec sociosqu vestibulum laoreet natoque libero semper nisl tempor, felis vivamus dictumst facilisis conubia platea senectus morbi aliquet, leo proin cursus nulla quam dis ultricies. Platea tempus et donec sollicitudin ornare nascetur nostra cursus posuere curae, phasellus sociis hendrerit placerat commodo at sagittis odio.</p>
+                <figure>
+                    <img  src="images/Asus Vivobook.png" alt="Asus VivoBook" width="200"/>
+                    <figcaption> Imagen con fines ilustrativos</figcaption>
+                </figure>
+            </article>
+            
+            <article>
+                <header> Alienware  ATD 900</header>
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sagittis volutpat convallis, scelerisque etiam dui ullamcorper cras ornare himenaeos posuere mi, lacinia porttitor porta curae interdum curabitur habitasse maecenas velit. Donec sociosqu vestibulum laoreet natoque libero semper nisl tempor, felis vivamus dictumst facilisis conubia platea senectus morbi aliquet, leo proin cursus nulla quam dis ultricies. Platea tempus et donec sollicitudin ornare nascetur nostra cursus posuere curae, phasellus sociis hendrerit placerat commodo at sagittis odio.</p>
+                <figure>
+                    <img  src="images/Alienware.png" alt="Alienware ATD 900" width="200"/>
+                    <figcaption> Más vendido</figcaption>
+                </figure>
+            </article>
+            
+            
+            <article>
+                <header> impresora 3D</header>
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sagittis volutpat convallis, scelerisque etiam dui ullamcorper cras ornare himenaeos posuere mi, lacinia porttitor porta curae interdum curabitur habitasse maecenas velit. Donec sociosqu vestibulum laoreet natoque libero semper nisl tempor, felis vivamus dictumst facilisis conubia platea senectus morbi aliquet, leo proin cursus nulla quam dis ultricies. Platea tempus et donec sollicitudin ornare nascetur nostra cursus posuere curae, phasellus sociis hendrerit placerat commodo at sagittis odio.</p>
+                <figure>
+                    <img  src="images/impresora.png" alt="impresora 3D" width="200"/>
+                    <figcaption> Más económico</figcaption>
+                </figure>
+            </article>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <article>
+                <header>Líneas de productos</header>
+                <table border="0">
+                    <thead id="encabezadoTabla">
+                        <tr>
+                            <th>Código</th>
+                            <th>Nombre</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody id="tablaResumen">
+                        <tr>
+                            <td>1</td>
+                            <td>Teclados</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Monitores</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Headsets</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Portátiles</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Periféricos</td>
+                            
+                        </tr>
+                    </tbody>
+                        
+                </table>
+                    
+            </article>
+            <br/>
+            <br/>
+            
+             
+        </section>
+        <footer id="piePagina">Derechos reservados &COPY; 2023 <address> Tibás,  Colima</address><address>Tel: 800055-5055</address></footer>
     </body>
 </html>
