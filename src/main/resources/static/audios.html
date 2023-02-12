@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Tienda en línea</title> <!-- Es el titulo de la pestaña-->
+        <meta charset="UTF-8">
+        <meta name="description" content="Página de la lección 2"/>
+        <meta name="keywords" content="html5, css, web, fidelitas"/>
+        <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
+        <link href="css/menu.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <header class="header">
+            <nav class="nav">
+                <a href="index.html" class="logo nav-link">TechShop</a> <!-- logo pare redirigir a pagina prencipal cuando se hace click -->
+                <ul class="nav-menu">
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="index.html">&LeftTriangleBar;</a></li>
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="ejemplo3.html">&RightTriangleBar;</a></li>
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="audios.html">Audios</a></li>
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="videos.html">Videos</a></li>
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="iframes.html">iFrames</a></li>
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="formularios.html">Formularios</a></li>
+
+                </ul>
+            </nav>
+        </header>
+        <aside id="barraLateral"> <!-- con clases de usa primero inicia en minuscula y luego mayuscula -->
+            <h2>Productos más vendidos</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sagittis volutpat convallis, scelerisque etiam dui ullamcorper cras ornare himenaeos posuere mi, lacinia porttitor porta curae interdum curabitur habitasse maecenas velit. Donec sociosqu vestibulum laoreet natoque libero semper nisl tempor, felis vivamus dictumst facilisis conubia platea senectus morbi aliquet, leo proin cursus nulla quam dis ultricies. Platea tempus et donec sollicitudin ornare nascetur nostra cursus posuere curae, phasellus sociis hendrerit placerat commodo at sagittis odio.</p>
+        </aside>
+        <section id="contenido">
+            <h2>Ejemplo de Audios</h2>
+            <figure>
+                <audio controls> <!-- etiqueta de audios -->
+                    <source src="audios/Jazz.mp3" type="audio/mpeg">
+                    Your browser does not support the <code>audio</code> tag.
+                </audio>
+            </figure>
+        </section>
+        <footer id="piePagina">Derechos reservados &COPY; 2023 <address> Tibás,  Colima</address><address>Tel: 800055-5055</address></footer>
+
+    </body>
+</html>

@@ -10,21 +10,26 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         <meta name="description" content="Página de la lección 2"/>
         <meta name="keywords" content="html5, css, web, fidelitas"/>
         <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
+        <link href="css/menu.css" rel="stylesheet" type="text/css"/> <!-- hoja de estilos de menu -->
+        <!-- ¡¡¡¡¡¡¡en la hoja de estilos, cuando se selecciona un id se tiene que poner #, pero si se selecciona un
+           con una clase se pone punto . -->
     </head>
     <body>
-        <!-- etiqueda que indica al navegador que es un encabezado -->
-        <header>
-            
-            <h1>Tienda en linea</h1>
-            <br>
-        
+        <!-- header etiqueda que indica al navegador que es un encabezado -->
+        <header class="header">
+            <nav class="nav">
+                <a href="index.html" class="logo nav-link">TechShop</a> <!-- logo pare redirigir a pagina prencipal cuando se hace click -->
+                <ul class="nav-menu">
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="ejemplo9.html">&LeftTriangleBar;</a></li>
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="ejemplo2.html">&RightTriangleBar;</a></li>
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="audios.html">Audios</a></li>
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="videos.html">Videos</a></li>
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="iframes.html">iFrames</a></li>
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="formularios.html">Formularios</a></li>
+
+                </ul>
+            </nav>
         </header>
-        <nav id="menu"> 
-            <a href="ejemplo9.html">Atrás</a>
-            <a href="index.html">HOME</a>
-            <a href="ejemplo2.html">Adelante</a>
-        
-        </nav>
         <aside id="barraLateral"> <!-- con clases de usa primero inicia en minuscula y luego mayuscula -->
             <h2>Productos más vendidos</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sagittis volutpat convallis, scelerisque etiam dui ullamcorper cras ornare himenaeos posuere mi, lacinia porttitor porta curae interdum curabitur habitasse maecenas velit. Donec sociosqu vestibulum laoreet natoque libero semper nisl tempor, felis vivamus dictumst facilisis conubia platea senectus morbi aliquet, leo proin cursus nulla quam dis ultricies. Platea tempus et donec sollicitudin ornare nascetur nostra cursus posuere curae, phasellus sociis hendrerit placerat commodo at sagittis odio.</p>

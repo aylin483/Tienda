@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<!-- iframes es para empotrar contenido -->
+<html>
+    <head>
+        <title>Tienda en línea</title> <!-- Es el titulo de la pestaña-->
+        <meta charset="UTF-8">
+        <meta name="description" content="Página de la lección 2"/>
+        <meta name="keywords" content="html5, css, web, fidelitas"/>
+        <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
+        <link href="css/menu.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+       <header class="header">
+            <nav class="nav">
+                <a href="index.html" class="logo nav-link">TechShop</a> <!-- logo pare redirigir a pagina prencipal cuando se hace click -->
+                <ul class="nav-menu">
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="index.html">&LeftTriangleBar;</a></li>
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="ejemplo3.html">&RightTriangleBar;</a></li>
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="audios.html">Audios</a></li>
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="videos.html">Videos</a></li>
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="iframes.html">iFrames</a></li>
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="formularios.html">Formularios</a></li>
+
+                </ul>
+            </nav>
+        </header>
+        <aside id="barraLateral"> <!-- con clases de usa primero inicia en minuscula y luego mayuscula -->
+            <h2>Productos más vendidos</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sagittis volutpat convallis, scelerisque etiam dui ullamcorper cras ornare himenaeos posuere mi, lacinia porttitor porta curae interdum curabitur habitasse maecenas velit. Donec sociosqu vestibulum laoreet natoque libero semper nisl tempor, felis vivamus dictumst facilisis conubia platea senectus morbi aliquet, leo proin cursus nulla quam dis ultricies. Platea tempus et donec sollicitudin ornare nascetur nostra cursus posuere curae, phasellus sociis hendrerit placerat commodo at sagittis odio.</p>
+        </aside>
+        <section id="contenido">
+            <h2>Ejemplo de iframes</h2>
+            
+            <article>
+                <header> <h3>Ejemplo de iframe página web</h3></header>
+                    <iframe
+                        
+                        src="https://sistemas.ufidelitas.ac.cr" 
+                        width="700"
+                        height="400" > 
+                        <!-- scr es para el url del conterndio que queremos empotrar
+ -->
+                    </iframe>
+                    <footer>Contenido HTML5</footer>
+                   
+            </article>
+            <article> 
+                <header><h3>Ejemplo iframe Youtube</h3></header>
+               <iframe 
+                   width="560" 
+                   height="315" 
+                   src="https://www.youtube.com/embed/dP95z1QgnXk" 
+                   title="YouTube video player" 
+                   frameborder="0" 
+                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                   allowfullscreen></iframe>
+            </article>
+            <article>
+                <header><h3>Ejemplo iframe Google Maps</h3></header>
+               <iframe 
+                   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15719.953771973298!2d-84.15032996441656!3d9.934919098406214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0fc806d80b6e7%3A0x43db42635f1e3937!2sAvenida%20Escazu!5e0!3m2!1sen!2scr!4v1675498307707!5m2!1sen!2scr" 
+                   width="600" 
+                   height="450" 
+                   style="border:0;" 
+                   allowfullscreen="" 
+                   loading="lazy" 
+                   referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </article>
+            
+        </section>
+        <footer id="piePagina">Derechos reservados &COPY; 2023 <address> Tibás,  Colima</address><address>Tel: 800055-5055</address></footer>
+
+    </body>
+</html>
+
