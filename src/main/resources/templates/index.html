@@ -7,16 +7,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <!-- sirve para agregar contenido dinamico -->
-       <!-- <div>Saludos desde MVC</div>
-        <p th:text="${Mensaje}"></p> 
-        <br/>
-        <br/>
-        <p>Nombre:<span th:text="${objetoCliente.nombre}"></span></p>
-        <p>Apellidos:<span th:text="${objetoCliente.apellidos}"></span></p>
-        <p>Correo:<span th:text="${objetoCliente.correo}"></span></p>
-        <p>Teléfono:<span th:text="${objetoCliente.telefono}"></span></p> -->
-       <h1>Lista de clientes</h1>
+       <header th:replace="layout/plantilla :: header" />
+        <h2>Lista de clientes</h2>
+       <a th:href="@{/nuevoCliente}">Nuevo cliente</a> <!-- para rutas se pone arroba {/} -->
+       <br/>
+       <br/>
        <div th:if="${clientes != null and !clientes.empty}"> <!--  el div se va a mostrar solo si cliente no es nulo y que no sea vacio -->
            <table border="1">
                <header>
@@ -25,6 +20,7 @@
                    <th>Apellidos</th>
                    <th>Correo</th>
                    <th>Teléfono</th>
+                   <th colspan="2">Acciones</th> <!-- colspan es para unificar columnas -->
                    </thead>
                    <tbody>
                        <tr th:each="item : ${clientes}"> <!-- para repetir cada uno de los que estan en td -->
@@ -32,6 +28,9 @@
                            <td th:text="${item.apellidos}"></td>
                            <td th:text="${item.correo}"></td>
                            <td th:text="${item.telefono}"></td>
+                           <td><a th:href="@{/modificarCliente/} + ${item.idCliente}">Modificar</a></td>
+                           <td><a th:href="@{/eliminarCliente/} + ${item.idCliente}">Eliminar</a></td>
+
                        </tr>
                    </tbody>
                </header>
@@ -40,5 +39,7 @@
        <div th:if="${clientes == null or clientes.empty}"> <!-- sale cuando la lista esta vacia o no existe -->
            La lista de clientes está vacía...
        </div>
+              <footer th:replace="layout/plantilla :: footer" />
+
     </body>
 </html>
