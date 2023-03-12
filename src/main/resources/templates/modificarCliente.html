@@ -13,7 +13,7 @@
         <a th:href="@{/}">Regresar</a>
         <br/>
         <br/> 
-        <form th:action="@{/guardarCliente}"
+        <form th:action="@{/cliente/guardar}"
               method="POST"
               th:object="${cliente}"> <!-- post es para crear nuevos elementos o crear -->
             <input type="hidden" name="idCliente" th:field="*{idCliente}" /> <!-- para poder modificar sin que el dato modificado se vuelva a agregar -->
@@ -27,7 +27,10 @@
             <input type="email" id="correo" name="correo" th:field="*{correo}"/><br/>
             
             <label for="telefono">Telefono:</label><br/>
-            <input type="tel" id="telefono" name="telefono" th:field="*{telefono}"/><br/><br/>
+            <input type="tel" id="telefono" name="telefono" th:field="*{telefono}"/><br/>
+            
+             <label for="limite">Límite de Crédito:</label><br/>
+            <input type="number" id="limite" name="limite" th:field="*{credito.limite}"/><br/><br/>
             
             <input type="submit" name="guardar" value="Guardar" />
         </form>

@@ -1,18 +1,32 @@
 <!DOCTYPE html>
 <!-- se pueden escribir fragmentos de codigo que se pueden usar en otras paginas, ej: cambiar el color va  aplicar par las otras -->
-<html>
+<html xmlns:th="http://www.thymeleaf.org" >
     <head>
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <header th:fragment="header">
-            <h1 style="color: blue;">TechShop</h1>
+        <header th:fragment="header" class="header"> <!-- se agrega la clase header -->
+            <nav class="nav">
+                <a th:href="@{/}" class="logo nav-link">TechShop</a> <!-- logo pare redirigir a pagina prencipal cuando se hace click -->
+                <ul class="nav-menu">
+                    <li class="nav-menu-item">
+                        <a class="nav-menu-link nav-link" th:href="@{/cliente/listado}">Clientes;</a>
+                    </li>
+                     <li class="nav-menu-item">
+                        <a class="nav-menu-link nav-link" th:href="@{/categoria/listado}">Categorias;</a>
+                    </li>
+                     <li class="nav-menu-item">
+                        <a class="nav-menu-link nav-link" th:href="@{/articulo/listado}">Articulos;</a>
+                    </li>
+
+                </ul>
+            </nav>
         </header>
-        <footer th:fragment="footer"> 
+        <footer th:fragment="footer" class="footer"> <!-- se agrega clase footer -->
             <p>&COPY; Derechos Reservados 2023</p>
-        </footer>
+        </footer >
 
        
     </body>
