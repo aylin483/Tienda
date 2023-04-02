@@ -14,4 +14,9 @@ public interface ClienteService {
 
     public void delete(Cliente cliente); //´para eliminar
     
+    public List<Cliente> getClientePorNombreApellidosTelefono(String nombre, String apellidos, String telefono);
+
+    public List<Cliente>getClientePorNombre(String nombre);
+
+    public List<Cliente>getClientePorTelefono(String telefono);
 }

@@ -1,33 +1,67 @@
 <!DOCTYPE html>
 <!-- se pueden escribir fragmentos de codigo que se pueden usar en otras paginas, ej: cambiar el color va  aplicar par las otras -->
 <html xmlns:th="http://www.thymeleaf.org" >
-    <head>
-        <title>TODO supply a title</title>
+    <head th:fragment="head">
+        <title>Tech Shop</title> <!-- de puede reemplazar el head en  otras paginas para no tener que copiar y pegar lo de abajo varias veces -->
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/> <!-- para agregar  referencias de css javascript y bootstrap -->
+        <link rel="stylesheet" th:href="@{/webjars/font-awesome/css/all.css}"/>
+        <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+        <script th:src="@{/webjars/popper.js/umd/popper.min.js}">
+        </script><script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script> 
+
     </head>
     <body>
         <header th:fragment="header" class="header"> <!-- se agrega la clase header -->
-            <nav class="nav">
-                <a th:href="@{/}" class="logo nav-link">TechShop</a> <!-- logo pare redirigir a pagina prencipal cuando se hace click -->
-                <ul class="nav-menu">
-                    <li class="nav-menu-item">
-                        <a class="nav-menu-link nav-link" th:href="@{/cliente/listado}">Clientes;</a>
-                    </li>
-                     <li class="nav-menu-item">
-                        <a class="nav-menu-link nav-link" th:href="@{/categoria/listado}">Categorias;</a>
-                    </li>
-                     <li class="nav-menu-item">
-                        <a class="nav-menu-link nav-link" th:href="@{/articulo/listado}">Articulos;</a>
-                    </li>
+            <nav class="navbar navbar-expand-sm navbar-dark bg-dark p-0">
+                <div class="container">
+                    <a th:href="@{/}" class="navbar-brand">TechShop</a> <!-- logo pare redirigir a pagina prencipal cuando se hace click, y el signo de dolar es para caMBIAR elementos DEL MODEL  -->
+                    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                        <span class="navbar-toggler_icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <ul class="navbar-nav">
+                        <li class="nav-item px-2">
+                            <a class="nav-link" th:href="@{/cliente/listado}"
+                               th:text="#{plantilla.clientes}">Clientes;</a>
+                        </li>
+                        <li class="nav-item px-2">
+                            <a class="nav-link" th:href="@{/categoria/listado}"
+                               th:text="#{plantilla.categorias}">Categorias;</a>
+                        </li>
+                        <li class="nav-item px-2">
+                            <a class="nav-link" th:href="@{/articulo/listado}"
+                               th:text="#{plantilla.articulos}">Articulos;</a>
+                        </li>
 
-                </ul>
+                    </ul>
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item mr-3">
+                                <a href="#" class="nav-link">
+                                    <i class="fas fa-user"></i>
+                                    <span th:text="#{plantilla.bienvenido}">Bienvenido</span>
+                                    <span sec:authentication="name">Usuario</span> <!-- se aplica security, muestra el nombre el usuario que esta logueado en el momento -->
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <form method="POST" th:action="@{/logout}">
+                                    <a href="#" onclick="this.parentNode.submit();" class="nav-link">
+                                        <i class="fas fa-user-times"></i>[[#{plantilla.logout}]]
+                                    </a>
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </nav>
         </header>
         <footer th:fragment="footer" class="footer"> <!-- se agrega clase footer -->
-            <p>&COPY; Derechos Reservados 2023</p>
+            <p>&COPY; [[#{plantilla.derechos}]]
+                <a th:href="@{/(lang=es)}">ES</a>| <!-- para cambiar a español -->
+                <a th:href="@{/(lang=en)}">EN</a> <!-- para cambiar a inglés -->
+            </p>
         </footer >
 
-       
+
     </body>
 </html>

@@ -46,5 +46,16 @@ public class ClienteController {
            clienteService.delete(cliente);
            return "redirect:/cliente/listado";
         }
+        
+    @GetMapping("/cliente/buscar")
+    public String buscar(Cliente cliente) {
+    return "/cliente/buscarCliente"; //retorna una vista
+    }
     
+    @PostMapping("/cliente/busqueda")
+    public String busqueda(Cliente cliente, Model model) {
+           var clientes = clienteService.getClientePorNombreApellidosTelefono(cliente.getNombre(),cliente.getNombre(),cliente.getNombre());
+           model.addAttribute("resultados", clientes);
+           return "/cliente/buscarCliente";
+    }
 }

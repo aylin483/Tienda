@@ -1,29 +1,26 @@
 
 <html xmls:th="http://www.thymeleaf.org">
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="/css/menu.css" rel="stylesheet" type="text/css"/> <!-- se quita static y puntos para que css funcione -->
+    <head th:replace="layout/plantilla :: head">
     </head>
     <body>
         <header th:replace="layout/plantilla :: header" />
         <div class="contenido"> 
-            <h2>Articulos Disponibles</h2>
+            <h2 th:text="#{index.titulo}">Articulos Disponibles</h2>
             <br/>
             <div th:if="${articulos != null and !articulos.empty}"> 
                 <table border="1">
                     <header>
                         <thead>
-                        <th>Descripcion</th>
-                        <th>Precio</th>
-                        <th>Acciones</th> <!-- colspan es para unificar columnas -->
+                        <th th:text="#{articulo.descripcion}">Descripcion</th>
+                        <th th:text="#{articulo.precio}" >Precio</th>
+                        <th th:text="#{articulo.comprar}">Comprar</th> <!-- colspan es para unificar columnas -->
                         </thead>
                         <tbody>
                             <tr th:each="item : ${articulos}"> <!-- para repetir cada uno de los que estan en td -->
                                 <td th:text="${item.descripcion}"></td>
                                 <td th:text="${#numbers.formatDecimal(item.precio, 3, 2)}"></td>
-                                <td><a th:href="@{/carrito/agregar/} + ${item.idArticulo}">Agregar</a></td>
+                                <td><a th:href="@{/carrito/agregar/} + ${item.idArticulo}"
+                                       th:text="#{accion.agregar}">Agregar</a></td>
 
                             </tr>
                         </tbody>
@@ -31,7 +28,7 @@
                 </table>
             </div>
             <div th:if="${articulos == null or articulos.empty}"> <!-- sale cuando la lista esta vacia o no existe -->
-                La lista de articulos está vacía...
+                [[#{articulo.no_mostrar}]]
             </div>
         </div>
         <footer th:replace="layout/plantilla :: footer" />
