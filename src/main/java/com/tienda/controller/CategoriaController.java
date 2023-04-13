@@ -17,7 +17,7 @@ public class CategoriaController {
     @Autowired
     CategoriaService categoriaService;
     
-    @GetMapping("/categoria/listado")
+    @GetMapping("/categoria/listado") 
     public String inicio(Model model){
           
         

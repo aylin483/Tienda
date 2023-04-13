@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <!-- se pueden escribir fragmentos de codigo que se pueden usar en otras paginas, ej: cambiar el color va  aplicar par las otras -->
-<html xmlns:th="http://www.thymeleaf.org" >
+<html xmlns:th="http://www.thymeleaf.org" 
+      xmls:sec="http://thymeleaf.org.thymeleaf-extras-springsecurity">
+
     <head th:fragment="head">
         <title>Tech Shop</title> <!-- de puede reemplazar el head en  otras paginas para no tener que copiar y pegar lo de abajo varias veces -->
         <meta charset="UTF-8">
@@ -20,22 +22,22 @@
                         <span class="navbar-toggler_icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarCollapse">
-                        <ul class="navbar-nav">
-                        <li class="nav-item px-2">
-                            <a class="nav-link" th:href="@{/cliente/listado}"
-                               th:text="#{plantilla.clientes}">Clientes;</a>
-                        </li>
-                        <li class="nav-item px-2">
-                            <a class="nav-link" th:href="@{/categoria/listado}"
-                               th:text="#{plantilla.categorias}">Categorias;</a>
-                        </li>
-                        <li class="nav-item px-2">
-                            <a class="nav-link" th:href="@{/articulo/listado}"
-                               th:text="#{plantilla.articulos}">Articulos;</a>
-                        </li>
+                        <ul class="navbar-nav" sec:authorize="hasRole('ROLE_ADMIN') or hasRole('ROLE_VENDEDOR')"> <!-- si soy user el bloque de clientes. cate, arti no se ve -->
+                            <li class="nav-item px-2">
+                                <a class="nav-link" th:href="@{/cliente/listado}"
+                                   th:text="#{plantilla.clientes}">Clientes;</a>
+                            </li>
+                            <li class="nav-item px-2">
+                                <a class="nav-link" th:href="@{/categoria/listado}"
+                                   th:text="#{plantilla.categorias}">Categorias;</a>
+                            </li>
+                            <li class="nav-item px-2">
+                                <a class="nav-link" th:href="@{/articulo/listado}"
+                                   th:text="#{plantilla.articulos}">Articulos;</a>
+                            </li>
 
-                    </ul>
-                        <ul class="navbar-nav ml-auto">
+                        </ul>
+                        <ul class="navbar-nav ml-auto" sec:authorize="isAuthenticated()">
                             <li class="nav-item mr-3">
                                 <a href="#" class="nav-link">
                                     <i class="fas fa-user"></i>
@@ -51,16 +53,28 @@
                                 </form>
                             </li>
                         </ul>
+                        <ul class="navbar-nav" sec:authorize="!isAuthenticated()">                            
+                            <li class="nav-item">                                
+                                <a class="nav-link" th:href="@{/login}">
+                                    <i class="fas fa-sign-in-alt"> Login</i></a></li> <!-- para poder hacer login al inicio -->
+                        </ul>
                     </div>
                 </div>
             </nav>
         </header>
-        <footer th:fragment="footer" class="footer"> <!-- se agrega clase footer -->
-            <p>&COPY; [[#{plantilla.derechos}]]
-                <a th:href="@{/(lang=es)}">ES</a>| <!-- para cambiar a español -->
-                <a th:href="@{/(lang=en)}">EN</a> <!-- para cambiar a inglés -->
-            </p>
-        </footer >
+        <footer th:fragment="footer" class="position-fixed bottom-0 start-0 end-0 bg-info text-white mt-5 p-2">
+            <div class="container">
+                <div class="col">
+                    <p class="lead text-center">
+                        &COPY [[#{plantilla.derechos}]]
+
+                        <a th:href="@{/(lang=es)}">ES</a> | 
+
+                        <a th:href="@{/(lang=en)}">EN</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
 
 
     </body>
