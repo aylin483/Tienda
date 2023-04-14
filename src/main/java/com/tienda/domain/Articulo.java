@@ -1,6 +1,7 @@
 
 package com.tienda.domain;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -23,7 +24,10 @@ public class Articulo {
     private double precio;
     private int existencias;
     private boolean activo;
-
+    
+    @Column(name = "ruta_imagen")
+    private String rutaImagen;
+    
     public Articulo() {
     }
 

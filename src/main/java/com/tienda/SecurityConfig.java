@@ -1,12 +1,15 @@
 package com.tienda;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
@@ -14,26 +17,34 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration // archivo de configuración
 @EnableWebSecurity
 public class SecurityConfig {
+    
+    @Autowired
+    private UserDetailsService userDetailsService;
 
-    @Bean //objeto
-    public UserDetailsService users() {
-        UserDetails admin = User.builder()
-                .username("admin") // tiene permiso a todo
-                .password("{noop}123") //noop es para no encriptar contraseña (en memoria)
-                .roles("USER", "VENDEDOR", "ADMIN")
-                .build();
-        UserDetails sales = User.builder()
-                .username("vendedor") // este usuario solo tiene roles de usuario y vendedor, tiene un poco más de permisos
-                .password("{noop}123")
-                .roles("USER", "VENDEDOR")
-                .build();
-        UserDetails user = User.builder()
-                .username("user") //rol de usuario
-                .password("{noop}123")
-                .roles("USER")
-                .build();
-        return new InMemoryUserDetailsManager(user, sales, admin);
+    @Autowired
+    public void configurerGlobal(AuthenticationManagerBuilder build) throws Exception {
+        build.userDetailsService(userDetailsService).passwordEncoder(new BCryptPasswordEncoder());
     }
+//  AUTENTICACIÓN EN MEMORIA QUE SE PIDE EN EL EXAMEN
+ //   @Bean //objeto
+  //  public UserDetailsService users() {
+    //    UserDetails admin = User.builder()
+        //        .username("admin") // tiene permiso a todo
+           //     .password("{noop}123") //noop es para no encriptar contraseña (en memoria)
+          //      .roles("USER", "VENDEDOR", "ADMIN")
+          //      .build();
+      //  UserDetails sales = User.builder()
+          //      .username("vendedor") // este usuario solo tiene roles de usuario y vendedor, tiene un poco más de permisos
+           //     .password("{noop}123")
+           //     .roles("USER", "VENDEDOR")
+            //    .build();
+       // UserDetails user = User.builder()
+         //       .username("user") //rol de usuario
+          //      .password("{noop}123")
+          //      .roles("USER")
+          //      .build();
+       // return new InMemoryUserDetailsManager(user, sales, admin);
+   // }
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http)
             throws Exception {
