@@ -75,6 +75,11 @@ public class SecurityConfig {
                         "/categoria/listado",
                         "/cliente/listado")
                 .hasAnyRole("ADMIN", "VENDEDOR")
+                         .requestMatchers(
+                        "/carrito/agregar/**", //solo tienen acceso los admin y vendedor
+                        "/carrito/listado",
+                        "/cliente/listado")
+                .hasRole("USER")
                 )
                 .formLogin((form) -> form
                 .loginPage("/login").permitAll())

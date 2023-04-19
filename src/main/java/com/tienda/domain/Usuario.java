@@ -36,4 +36,6 @@ public class Usuario implements Serializable {
     @ManyToOne
     private List<Rol> roles;
     
+    private Long idCliente; // no se ponen anotaciones porque este campo puede ir vacio, notods los usuarios tiene  que tener id cliente
+    
 }
